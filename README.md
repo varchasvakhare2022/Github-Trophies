@@ -4,6 +4,15 @@ A dynamic GitHub profile trophy generator that creates beautiful SVG panels disp
 
 ![GitHub Profile Panels](https://img.shields.io/badge/GitHub-Profile%20Panels-blue?style=for-the-badge)
 
+## Example 
+
+<img src = "https://git-jadugar-trophies.vercel.app/api/panels?username=varchasvakhare2022&theme=vampire">
+<img src = "https://git-jadugar-trophies.vercel.app/api/panels?username=varchasvakhare2022&theme=aura">
+<img src = "https://git-jadugar-trophies.vercel.app/api/panels?username=varchasvakhare2022&theme=kimbie-dark">
+<img src = "https://git-jadugar-trophies.vercel.app/api/panels?username=varchasvakhare2022&theme=dark-lover">
+<img src = "https://git-jadugar-trophies.vercel.app/api/panels?username=varchasvakhare2022&theme=matrix">
+<img src = "https://git-jadugar-trophies.vercel.app/api/panels?username=varchasvakhare2022&theme=discord">
+
 ## ✨ Features
 
 - 🏆 **Trophy System**: Earn grades (S+, S, A+, A, B+, B, C+, C, D) based on your GitHub activity
