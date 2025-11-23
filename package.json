@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Dynamic GitHub profile panels as SVG, similar to trophies.",
   "main": "index.js",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js"
