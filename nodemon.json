@@ -1,0 +1,15 @@
+{
+  "watch": [
+    "api",
+    "src",
+    "server.js"
+  ],
+  "ext": "js,json",
+  "ignore": [
+    "node_modules",
+    ".git",
+    "*.log"
+  ],
+  "delay": 500
+}
+
