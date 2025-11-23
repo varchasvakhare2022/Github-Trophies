@@ -466,7 +466,7 @@ function renderPanels(user, themeName, options = {}) {
     })
     .join("");
 
-  return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" overflow="visible" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" style="display: block !important; vertical-align: bottom !important; margin: 0 !important; padding: 0 !important; border: 0 !important; line-height: 0 !important; height: ${height}px !important; max-height: ${height}px !important; overflow: hidden !important;"><title>${escapeXml(user.name)}'s GitHub Trophies</title><desc>Dynamic GitHub profile trophies showing achievements.</desc>${trophySvg}</svg>`;
+  return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" overflow="visible" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" style="display: block; vertical-align: bottom; margin: 0; padding: 0; border: 0; line-height: 0; height: ${height}px; max-height: ${height}px; overflow: hidden;"><title>${escapeXml(user.name)}'s GitHub Trophies</title><desc>Dynamic GitHub profile trophies showing achievements.</desc>${trophySvg}</svg>`;
 }
 
 module.exports = { renderPanels };
