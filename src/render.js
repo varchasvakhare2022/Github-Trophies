@@ -378,8 +378,11 @@ function renderPanels(user, themeName, options = {}) {
   const gapH = marginH !== undefined ? marginH : TROPHY_GAP;
 
   const width = PADDING * 2 + (TROPHY_WIDTH + gapW) * actualColumns - gapW;
-  // Calculate exact height: top padding + rows (without bottom gap) - trim bottom 6px to eliminate space
-  const height = PADDING + (TROPHY_HEIGHT + gapH) * actualRows - gapH - 6;
+  // Calculate exact height: top padding + rows - trim extra space at bottom
+  // Last row ends at: PADDING + (TROPHY_HEIGHT + gapH) * (actualRows - 1) + TROPHY_HEIGHT
+  // We want to crop tightly, so subtract extra padding
+  const lastRowBottom = PADDING + (TROPHY_HEIGHT + gapH) * (actualRows - 1) + TROPHY_HEIGHT;
+  const height = lastRowBottom - 10; // Crop 10px from bottom to eliminate space
 
   const isVampireTheme = themeName && themeName.toLowerCase() === 'vampire';
 
@@ -461,7 +464,7 @@ function renderPanels(user, themeName, options = {}) {
     })
     .join("");
 
-  return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" preserveAspectRatio="xMidYMin meet" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" style="display: block; vertical-align: bottom; margin: 0; padding: 0; border: 0; line-height: 0;"><title id="title">${escapeXml(user.name)}'s GitHub Trophies</title><desc id="desc">Dynamic GitHub profile trophies showing achievements.</desc>${trophySvg}</svg>`;
+  return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" preserveAspectRatio="xMidYMin meet" overflow="hidden" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" style="display: block; vertical-align: bottom; margin: 0 !important; padding: 0 !important; border: 0; line-height: 0; max-height: ${height}px;"><title id="title">${escapeXml(user.name)}'s GitHub Trophies</title><desc id="desc">Dynamic GitHub profile trophies showing achievements.</desc>${trophySvg}</svg>`;
 }
 
 module.exports = { renderPanels };
