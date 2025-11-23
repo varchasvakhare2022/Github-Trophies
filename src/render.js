@@ -382,9 +382,10 @@ function renderPanels(user, themeName, options = {}) {
   // Progress bar is at y="${TROPHY_HEIGHT - 12}" with height 6, so ends at TROPHY_HEIGHT - 12 + 6 = TROPHY_HEIGHT - 6
   // Last row card starts at: PADDING + (TROPHY_HEIGHT + gapH) * (actualRows - 1)
   // Progress bar ends at: lastRowCardStart + (TROPHY_HEIGHT - 6)
+  // Crop even more aggressively to eliminate any bottom space
   const lastRowCardStart = PADDING + (TROPHY_HEIGHT + gapH) * (actualRows - 1);
   const progressBarEnd = lastRowCardStart + TROPHY_HEIGHT - 6;
-  const height = progressBarEnd; // Exact height to where progress bar ends
+  const height = progressBarEnd - 2; // Crop additional 2px to eliminate any remaining space
 
   const isVampireTheme = themeName && themeName.toLowerCase() === 'vampire';
 
@@ -466,7 +467,7 @@ function renderPanels(user, themeName, options = {}) {
     })
     .join("");
 
-  return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" overflow="visible" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" style="display: block; vertical-align: bottom; margin: 0; padding: 0; border: 0; line-height: 0; height: ${height}px; max-height: ${height}px; overflow: hidden;"><title>${escapeXml(user.name)}'s GitHub Trophies</title><desc>Dynamic GitHub profile trophies showing achievements.</desc>${trophySvg}</svg>`;
+  return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" style="display: block !important; vertical-align: bottom !important; margin: 0 !important; padding: 0 !important; border: 0 !important; line-height: 0 !important; height: ${height}px !important; max-height: ${height}px !important; overflow: hidden !important; box-sizing: border-box !important;"><title>${escapeXml(user.name)}'s GitHub Trophies</title><desc>Dynamic GitHub profile trophies showing achievements.</desc>${trophySvg}</svg>`;
 }
 
 module.exports = { renderPanels };
