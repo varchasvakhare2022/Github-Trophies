@@ -8,7 +8,6 @@ const TROPHY_WIDTH = 200;
 const TROPHY_HEIGHT = 200;
 const TROPHY_GAP = 10;
 const PADDING = 20;
-const PADDING_BOTTOM = 0; // No bottom padding to eliminate space
 const COLUMNS = 6;
 const ROWS = 3;
 
@@ -379,7 +378,8 @@ function renderPanels(user, themeName, options = {}) {
   const gapH = marginH !== undefined ? marginH : TROPHY_GAP;
 
   const width = PADDING * 2 + (TROPHY_WIDTH + gapW) * actualColumns - gapW;
-  const height = PADDING + PADDING_BOTTOM + (TROPHY_HEIGHT + gapH) * actualRows - gapH;
+  // Calculate exact height: top padding + rows (without bottom gap) - no bottom padding
+  const height = PADDING + (TROPHY_HEIGHT + gapH) * actualRows - gapH;
 
   const isVampireTheme = themeName && themeName.toLowerCase() === 'vampire';
 
@@ -440,7 +440,7 @@ function renderPanels(user, themeName, options = {}) {
           <!-- Progress bar at the bottom -->
           <rect
             x="20"
-            y="${TROPHY_HEIGHT - 12}"
+            y="${TROPHY_HEIGHT - 6}"
             width="${TROPHY_WIDTH - 40}"
             height="6"
             rx="3"
@@ -449,7 +449,7 @@ function renderPanels(user, themeName, options = {}) {
           />
           <rect
             x="20"
-            y="${TROPHY_HEIGHT - 12}"
+            y="${TROPHY_HEIGHT - 6}"
             width="${(TROPHY_WIDTH - 40) * trophy.progress}"
             height="6"
             rx="3"
@@ -461,7 +461,7 @@ function renderPanels(user, themeName, options = {}) {
     })
     .join("");
 
-  return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" style="display: block; vertical-align: bottom; margin: 0;"><title id="title">${escapeXml(user.name)}'s GitHub Trophies</title><desc id="desc">Dynamic GitHub profile trophies showing achievements.</desc>${trophySvg}</svg>`;
+  return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" style="display: block; vertical-align: bottom; margin: 0; padding: 0; border: 0;"><title id="title">${escapeXml(user.name)}'s GitHub Trophies</title><desc id="desc">Dynamic GitHub profile trophies showing achievements.</desc>${trophySvg}</svg>`;
 }
 
 module.exports = { renderPanels };
