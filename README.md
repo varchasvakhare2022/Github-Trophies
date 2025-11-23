@@ -104,8 +104,16 @@ Github-Profile-Panels/
 
 Simply add the following to your GitHub profile README:
 
+**Option 1: Markdown (may have spacing issues)**
 ```markdown
 ![GitHub Profile Panels](https://your-vercel-app.vercel.app/api/panels?username=your-username)
+```
+
+**Option 2: HTML (Recommended - eliminates spacing)**
+```html
+<div style="line-height: 0; margin: 0; padding: 0; display: block;">
+  <img src="https://your-vercel-app.vercel.app/api/panels?username=your-username" alt="GitHub Trophies" style="display: block; margin: 0; padding: 0; vertical-align: bottom; line-height: 0; border: 0;" />
+</div>
 ```
 
 ### Query Parameters

@@ -382,10 +382,10 @@ function renderPanels(user, themeName, options = {}) {
   // Progress bar is at y="${TROPHY_HEIGHT - 12}" with height 6, so ends at TROPHY_HEIGHT - 12 + 6 = TROPHY_HEIGHT - 6
   // Last row card starts at: PADDING + (TROPHY_HEIGHT + gapH) * (actualRows - 1)
   // Progress bar ends at: lastRowCardStart + (TROPHY_HEIGHT - 6)
-  // Crop even more aggressively to eliminate any bottom space
+  // Crop aggressively to eliminate ALL bottom space
   const lastRowCardStart = PADDING + (TROPHY_HEIGHT + gapH) * (actualRows - 1);
   const progressBarEnd = lastRowCardStart + TROPHY_HEIGHT - 6;
-  const height = progressBarEnd - 2; // Crop additional 2px to eliminate any remaining space
+  const height = progressBarEnd - 4; // Crop 4px to eliminate all remaining space
 
   const isVampireTheme = themeName && themeName.toLowerCase() === 'vampire';
 
