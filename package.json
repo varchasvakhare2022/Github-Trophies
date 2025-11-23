@@ -4,7 +4,7 @@
   "description": "Dynamic GitHub profile panels as SVG, similar to trophies.",
   "main": "index.js",
   "engines": {
-    "node": "18.x"
+    "node": "22.x"
   },
   "scripts": {
     "dev": "nodemon server.js",
