@@ -8,6 +8,7 @@ const TROPHY_WIDTH = 200;
 const TROPHY_HEIGHT = 200;
 const TROPHY_GAP = 10;
 const PADDING = 20;
+const PADDING_BOTTOM = 10; // Reduced bottom padding to minimize space
 const COLUMNS = 6;
 const ROWS = 3;
 
@@ -378,7 +379,7 @@ function renderPanels(user, themeName, options = {}) {
   const gapH = marginH !== undefined ? marginH : TROPHY_GAP;
 
   const width = PADDING * 2 + (TROPHY_WIDTH + gapW) * actualColumns - gapW;
-  const height = PADDING * 2 + (TROPHY_HEIGHT + gapH) * actualRows - gapH;
+  const height = PADDING + PADDING_BOTTOM + (TROPHY_HEIGHT + gapH) * actualRows - gapH;
 
   const isVampireTheme = themeName && themeName.toLowerCase() === 'vampire';
 
@@ -469,13 +470,12 @@ function renderPanels(user, themeName, options = {}) {
   xmlns="http://www.w3.org/2000/svg"
   role="img"
   aria-labelledby="title desc"
+  style="display: block;"
 >
   <title id="title">${escapeXml(user.name)}'s GitHub Trophies</title>
   <desc id="desc">Dynamic GitHub profile trophies showing achievements.</desc>
-
   ${trophySvg}
-</svg>
-`.trim();
+</svg>`.trim();
 }
 
 module.exports = { renderPanels };
