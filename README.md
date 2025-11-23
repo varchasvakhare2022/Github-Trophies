@@ -6,12 +6,24 @@ A dynamic GitHub profile trophy generator that creates beautiful SVG panels disp
 
 ## Example 
 
-<img src = "https://git-jadugar-trophies.vercel.app/api/panels?username=varchasvakhare2022&theme=vampire">
-<img src = "https://git-jadugar-trophies.vercel.app/api/panels?username=varchasvakhare2022&theme=aura">
-<img src = "https://git-jadugar-trophies.vercel.app/api/panels?username=varchasvakhare2022&theme=kimbie-dark">
-<img src = "https://git-jadugar-trophies.vercel.app/api/panels?username=varchasvakhare2022&theme=dark-lover">
-<img src = "https://git-jadugar-trophies.vercel.app/api/panels?username=varchasvakhare2022&theme=matrix">
-<img src = "https://git-jadugar-trophies.vercel.app/api/panels?username=varchasvakhare2022&theme=discord">
+<div style="line-height: 0; margin: 0; padding: 0; display: block;">
+  <img src="https://git-jadugar-trophies.vercel.app/api/panels?username=varchasvakhare2022&theme=vampire" alt="GitHub Trophies" style="display: block; margin: 0; padding: 0; vertical-align: bottom; line-height: 0; border: 0;" />
+</div>
+<div style="line-height: 0; margin: 0; padding: 0; display: block;">
+  <img src="https://git-jadugar-trophies.vercel.app/api/panels?username=varchasvakhare2022&theme=aura" alt="GitHub Trophies" style="display: block; margin: 0; padding: 0; vertical-align: bottom; line-height: 0; border: 0;" />
+</div>
+<div style="line-height: 0; margin: 0; padding: 0; display: block;">
+  <img src="https://git-jadugar-trophies.vercel.app/api/panels?username=varchasvakhare2022&theme=kimbie-dark" alt="GitHub Trophies" style="display: block; margin: 0; padding: 0; vertical-align: bottom; line-height: 0; border: 0;" />
+</div>
+<div style="line-height: 0; margin: 0; padding: 0; display: block;">
+  <img src="https://git-jadugar-trophies.vercel.app/api/panels?username=varchasvakhare2022&theme=dark-lover" alt="GitHub Trophies" style="display: block; margin: 0; padding: 0; vertical-align: bottom; line-height: 0; border: 0;" />
+</div>
+<div style="line-height: 0; margin: 0; padding: 0; display: block;">
+  <img src="https://git-jadugar-trophies.vercel.app/api/panels?username=varchasvakhare2022&theme=matrix" alt="GitHub Trophies" style="display: block; margin: 0; padding: 0; vertical-align: bottom; line-height: 0; border: 0;" />
+</div>
+<div style="line-height: 0; margin: 0; padding: 0; display: block;">
+  <img src="https://git-jadugar-trophies.vercel.app/api/panels?username=varchasvakhare2022&theme=discord" alt="GitHub Trophies" style="display: block; margin: 0; padding: 0; vertical-align: bottom; line-height: 0; border: 0;" />
+</div>
 
 ## ✨ Features
 

@@ -385,7 +385,7 @@ function renderPanels(user, themeName, options = {}) {
   // Crop aggressively to eliminate ALL bottom space
   const lastRowCardStart = PADDING + (TROPHY_HEIGHT + gapH) * (actualRows - 1);
   const progressBarEnd = lastRowCardStart + TROPHY_HEIGHT - 6;
-  const height = progressBarEnd - 4; // Crop 4px to eliminate all remaining space
+  const height = progressBarEnd - 6; // Crop 6px to eliminate all remaining space
 
   const isVampireTheme = themeName && themeName.toLowerCase() === 'vampire';
 
