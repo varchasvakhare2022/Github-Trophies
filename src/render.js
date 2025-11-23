@@ -8,7 +8,7 @@ const TROPHY_WIDTH = 200;
 const TROPHY_HEIGHT = 200;
 const TROPHY_GAP = 10;
 const PADDING = 20;
-const PADDING_BOTTOM = 10; // Reduced bottom padding to minimize space
+const PADDING_BOTTOM = 0; // No bottom padding to eliminate space
 const COLUMNS = 6;
 const ROWS = 3;
 
@@ -461,21 +461,7 @@ function renderPanels(user, themeName, options = {}) {
     })
     .join("");
 
-  return `
-<svg
-  width="${width}"
-  height="${height}"
-  viewBox="0 0 ${width} ${height}"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
-  role="img"
-  aria-labelledby="title desc"
-  style="display: block;"
->
-  <title id="title">${escapeXml(user.name)}'s GitHub Trophies</title>
-  <desc id="desc">Dynamic GitHub profile trophies showing achievements.</desc>
-  ${trophySvg}
-</svg>`.trim();
+  return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" style="display: block; vertical-align: bottom; margin: 0;"><title id="title">${escapeXml(user.name)}'s GitHub Trophies</title><desc id="desc">Dynamic GitHub profile trophies showing achievements.</desc>${trophySvg}</svg>`;
 }
 
 module.exports = { renderPanels };
