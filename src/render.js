@@ -385,7 +385,7 @@ function renderPanels(user, themeName, options = {}) {
   // Crop more aggressively to eliminate ALL space - crop to where progress bar actually ends
   const lastRowCardStart = PADDING + (TROPHY_HEIGHT + gapH) * (actualRows - 1);
   const progressBarEnd = lastRowCardStart + (TROPHY_HEIGHT - 6); // Progress bar ends at 194px from card top
-  const height = Math.floor(progressBarEnd - 15); // Crop 15px very aggressively to eliminate all space
+  const height = Math.floor(progressBarEnd - 395); // Crop 15px very aggressively to eliminate all space
 
   const isVampireTheme = themeName && themeName.toLowerCase() === 'vampire';
 
