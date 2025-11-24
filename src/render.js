@@ -385,7 +385,7 @@ function renderPanels(user, themeName, options = {}) {
   // Crop aggressively - subtract extra pixels to eliminate ALL space
   const lastRowCardStart = PADDING + (TROPHY_HEIGHT + gapH) * (actualRows - 1);
   const progressBarEnd = lastRowCardStart + TROPHY_HEIGHT - 6;
-  const height = progressBarEnd - 8; // Crop 8px aggressively to eliminate all space
+  const height = Math.floor(progressBarEnd - 8); // Crop 8px and ensure integer height
 
   const isVampireTheme = themeName && themeName.toLowerCase() === 'vampire';
 
@@ -468,9 +468,9 @@ function renderPanels(user, themeName, options = {}) {
     .join("");
 
   const clipId = `clip-${Math.random().toString(36).substr(2, 9)}`;
-  // Use a tighter viewBox that crops the bottom more aggressively
-  const viewBoxHeight = height;
-  return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${viewBoxHeight}" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" style="display: block !important; vertical-align: bottom !important; margin: 0 !important; padding: 0 !important; border: 0 !important; line-height: 0 !important; height: ${height}px !important; max-height: ${height}px !important; overflow: hidden !important; box-sizing: border-box !important;"><defs><clipPath id="${clipId}"><rect x="0" y="0" width="${width}" height="${viewBoxHeight}"/></clipPath></defs><g clip-path="url(#${clipId})">${trophySvg}</g><title>${escapeXml(user.name)}'s GitHub Trophies</title><desc>Dynamic GitHub profile trophies showing achievements.</desc></svg>`;
+  // Ensure viewBox matches height exactly (both as integers)
+  const viewBoxHeight = Math.floor(height);
+  return `<svg width="${Math.floor(width)}" height="${height}" viewBox="0 0 ${Math.floor(width)} ${viewBoxHeight}" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" style="display: block !important; vertical-align: bottom !important; margin: 0 !important; padding: 0 !important; border: 0 !important; line-height: 0 !important; height: ${height}px !important; max-height: ${height}px !important; overflow: hidden !important; box-sizing: border-box !important;"><defs><clipPath id="${clipId}"><rect x="0" y="0" width="${Math.floor(width)}" height="${viewBoxHeight}"/></clipPath></defs><g clip-path="url(#${clipId})">${trophySvg}</g><title>${escapeXml(user.name)}'s GitHub Trophies</title><desc>Dynamic GitHub profile trophies showing achievements.</desc></svg>`;
 }
 
 module.exports = { renderPanels };
