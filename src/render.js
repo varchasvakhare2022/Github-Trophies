@@ -378,13 +378,13 @@ function renderPanels(user, themeName, options = {}) {
   const gapH = marginH !== undefined ? marginH : TROPHY_GAP;
 
   const width = PADDING * 2 + (TROPHY_WIDTH + gapW) * actualColumns - gapW;
-  // Calculate exact height: Progress bar is now at absolute bottom (TROPHY_HEIGHT - 6) with height 6
-  // So progress bar ends exactly at TROPHY_HEIGHT (card bottom)
+  // Calculate exact height: Progress bar is at y="${TROPHY_HEIGHT - 12}" with height 6
+  // So progress bar ends at TROPHY_HEIGHT - 12 + 6 = TROPHY_HEIGHT - 6
   // Last row card starts at: PADDING + (TROPHY_HEIGHT + gapH) * (actualRows - 1)
-  // Card bottom (where progress bar ends) is at: lastRowCardStart + TROPHY_HEIGHT
+  // Progress bar ends at: lastRowCardStart + (TROPHY_HEIGHT - 6)
   const lastRowCardStart = PADDING + (TROPHY_HEIGHT + gapH) * (actualRows - 1);
-  const cardBottom = lastRowCardStart + TROPHY_HEIGHT;
-  const height = cardBottom; // Exact height to card bottom, no extra space
+  const progressBarEnd = lastRowCardStart + TROPHY_HEIGHT - 6;
+  const height = progressBarEnd; // Exact height to where progress bar ends
 
   const isVampireTheme = themeName && themeName.toLowerCase() === 'vampire';
 
@@ -442,10 +442,10 @@ function renderPanels(user, themeName, options = {}) {
           >
             ${escapeXml(String(trophy.value))}pt
           </text>
-          <!-- Progress bar at the absolute bottom -->
+          <!-- Progress bar at the bottom -->
           <rect
             x="20"
-            y="${TROPHY_HEIGHT - 6}"
+            y="${TROPHY_HEIGHT - 12}"
             width="${TROPHY_WIDTH - 40}"
             height="6"
             rx="3"
@@ -454,7 +454,7 @@ function renderPanels(user, themeName, options = {}) {
           />
           <rect
             x="20"
-            y="${TROPHY_HEIGHT - 6}"
+            y="${TROPHY_HEIGHT - 12}"
             width="${(TROPHY_WIDTH - 40) * trophy.progress}"
             height="6"
             rx="3"
