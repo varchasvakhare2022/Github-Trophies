@@ -170,7 +170,7 @@ const THEMES = {
     border: "#2a273f"
   },
   vampire: {
-    background: "#0d0a0f",
+    background: "#000000",
     cardBg: "#2d1b3d",
     text: "#dc2626",
     accent: "#dc2626",
